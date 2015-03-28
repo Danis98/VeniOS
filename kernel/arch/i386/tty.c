@@ -50,6 +50,9 @@ void terminal_putchar(char c){
 }
 
 void terminal_tab(){
+	if(terminal_column%8==0)
+		if(++terminal_column==VGA_WIDTH)
+			terminal_newline();
 	while(terminal_column%8!=0)
 		terminal_column++;
 	if(terminal_column==VGA_WIDTH)

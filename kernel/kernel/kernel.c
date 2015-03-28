@@ -41,5 +41,5 @@ void kernel_main(void){
 	//Memory dump test
 	uint32_t mem_start=0x100000, mem_end=0x100100;
 	printf("\nMemory dump test: from 0x%x to 0x%x\n", mem_start, mem_end);
-	mem_dmp(mem_start, mem_end, 32);
+	mem_dmp(mem_start, mem_end);
 }
