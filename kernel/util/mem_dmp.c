@@ -1,5 +1,7 @@
 #include <dmp_util.h>
 
+#include <math.h>
+
 void mem_dmp(uint32_t start, uint32_t final){
 	printf("Dumping!");
 	uint32_t i;
@@ -11,7 +13,7 @@ void mem_dmp(uint32_t start, uint32_t final){
 		//Omit tabs at last element in line
 		if((i-start)%4!=3){
 			//If num is too short
-			if(*addr<0x10000)
+			if(abs(*addr)<0x10000)
 				printf("\t\t", *addr);
 			else 
 				printf("\t", *addr);

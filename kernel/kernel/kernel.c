@@ -25,7 +25,7 @@ void kernel_early(void){
 	//Nice header with infos
 	printf("VeniOS Alpha by Venio\n");
 	terminal_setcolor(COLOR_RED,COLOR_BLACK);
-	printf("Copyright (c) 2014 Weird Lion Studios\n\n");
+	printf("Copyright (c) 2014-2015 Weird Lion Studios\n\n");
 	terminal_setcolor(COLOR_BLACK,COLOR_LIGHT_CYAN);
 	printf("Kernel version:          0.1.1\n"
 		"Using custom freestanding libc\n");
