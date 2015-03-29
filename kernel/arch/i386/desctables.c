@@ -27,13 +27,13 @@ static void init_gdt(){
 	
 	gdt_set_gate(0, 0, 0, 0, 0);
 	//10011010 11001111
-	gdt_set_gate(1, 0, 0xffffffff, 0x9a, 0xcf);
+	gdt_set_gate(1, 0, 0xffffffff, KERNEL_LEVEL|CODE_SEG, DEFAULT_FLAGS);
 	//10010010 11001111
-	gdt_set_gate(2, 0, 0xffffffff, 0x92, 0xcf);
+	gdt_set_gate(2, 0, 0xffffffff, KERNEL_LEVEL|DATA_SEG, DEFAULT_FLAGS);
 	//11111010
-	gdt_set_gate(3, 0, 0xffffffff, 0xfa, 0xcf);
+	gdt_set_gate(3, 0, 0xffffffff, USER_LEVEL|CODE_SEG, DEFAULT_FLAGS);
 	//11110010
-	gdt_set_gate(4, 0, 0xffffffff, 0xf2, 0xcf);
+	gdt_set_gate(4, 0, 0xffffffff, USER_LEVEL|DATA_SEG, DEFAULT_FLAGS);
 
 	gdt_flush((uint32_t)&gdt_ptr);
 }

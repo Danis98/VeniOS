@@ -3,6 +3,12 @@
 
 #include <stdint.h>
 
+#define CODE_SEG 0xA
+#define DATA_SEG 0x2
+#define KERNEL_LEVEL 0x90
+#define USER_LEVEL 0xF0
+#define DEFAULT_FLAGS 0xCF
+
 struct gdt_entry_struct{
 	uint16_t limit_low;
 	uint16_t base_low;

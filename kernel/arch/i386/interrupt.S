@@ -1,4 +1,5 @@
 .intel_syntax noprefix
+
 .extern isr_handler
 isr_common:
 	pusha
