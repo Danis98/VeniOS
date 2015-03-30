@@ -101,3 +101,7 @@ void terminal_fill_line(){
 	}
 	while(terminal_column!=0);
 }
+
+uint8_t terminal_getcolor(){
+	return terminal_color;
+}

@@ -4,7 +4,8 @@
 #include <stdint.h>
 #include <stdio.h>
 
-#include <kernel/desctables.h>
+#include <kernel/gdt.h>
+#include <kernel/idt.h>
 
 //Granularity in bytes
 #define GRAN 4 /*32-bit values in dump*/

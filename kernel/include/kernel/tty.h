@@ -6,6 +6,7 @@
 
 void terminal_initialize(enum vga_color,enum vga_color);
 void terminal_setcolor(enum vga_color,enum vga_color);
+uint8_t terminal_getcolor();
 void terminal_putchar(uint16_t c);
 void terminal_putentryat(char ch, uint8_t color, size_t x, size_t y);
 void terminal_write(const char* data, size_t size);
