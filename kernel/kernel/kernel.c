@@ -33,6 +33,4 @@ void kernel_main(void){
 	print_header();
 	//Check supposed gdt entries
 	dmp_gdt(gdt_ptr, gdt_entries);
-
-	
 }

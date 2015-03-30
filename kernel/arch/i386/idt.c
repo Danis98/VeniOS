@@ -11,6 +11,8 @@ void init_idt(){
 	memset(&idt_entries, 0, sizeof(idt_entry_t)*256);
 					//10001110
 	idt_set_gate(0, (uint32_t)isr0, 0x08, 0x8e);
+
+	idt_flush((uint32_t)&idt_ptr);
 }
 
 void idt_set_gate(uint8_t index, uint32_t base, uint16_t selector,

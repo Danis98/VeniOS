@@ -69,7 +69,7 @@ venios.kernel: $(OBJ_LINK_LIST) $(ARCHDIR)/linker.ld
 	$(CC) -c $< -o $@ $(CFLAGS) $(CPPFLAGS)
 
 clean:
-	rm -f venios.kernel $(OBJS) $(OBJS_OUR) *.o */*.o */*/*.o *~ */*~ */*/*~
+	rm -rf venios.kernel $(OBJS) $(OBJS_OUR) *.o *~
 
 install: install-headers install-kernel
 
