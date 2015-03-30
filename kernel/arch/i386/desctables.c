@@ -48,7 +48,6 @@ static void init_idt(){
 
 static void gdt_set_gate(int32_t index, uint32_t base, uint32_t limit,
 			uint8_t access, uint8_t granularity){
-	printf("Setting gate %d\n", index);
 	gdt_entries[index].base_low	=base & 0xffff;
 	gdt_entries[index].base_middle	=(base>>16) & 0xff;
 	gdt_entries[index].base_high	=(base>>24) & 0xff;

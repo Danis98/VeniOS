@@ -94,3 +94,10 @@ void terminal_writestring(const char* data){
 	size_t str_length=strlen(data);
 	terminal_write(data,str_length);
 }
+
+void terminal_fill_line(){
+	do{
+		terminal_putchar(' ');
+	}
+	while(terminal_column!=0);
+}

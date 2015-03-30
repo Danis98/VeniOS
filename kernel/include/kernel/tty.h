@@ -15,6 +15,9 @@ void terminal_tab(void);
 void terminal_newline(void);
 void terminal_clearline(size_t row);
 
+//Special functions for fancyness
+void terminal_fill_line();
+
 extern size_t terminal_row;
 extern size_t terminal_column;
 extern uint8_t terminal_color;

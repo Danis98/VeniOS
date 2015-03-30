@@ -26,8 +26,8 @@ _start:
 	#Setup temporary stack
 	movl $stack_top,%esp
 
-	#Call core kernel initialization
-	call kernel_early
+	#Call early kernel initialization
+	call kernel_init
 
 	#Call globl constructors
 	call _init
