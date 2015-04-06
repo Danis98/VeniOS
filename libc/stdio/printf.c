@@ -6,7 +6,7 @@
 #include <math.h>
 
 #if defined(__is_venios_kernel)
-#include <kernel/tty.h>
+#include <arch/i386/tty.h>
 #endif
 
 void printNum(int n, int base);

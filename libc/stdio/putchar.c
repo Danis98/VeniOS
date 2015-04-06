@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 #if defined(__is_venios_kernel)
-#include <kernel/tty.h>
+#include <arch/i386/tty.h>
 #endif
 
 int putchar(int integer_char){

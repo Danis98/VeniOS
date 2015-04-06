@@ -1,4 +1,4 @@
-#include <kernel/idt.h>
+#include <arch/i386/idt.h>
 
 #include <string.h>
 

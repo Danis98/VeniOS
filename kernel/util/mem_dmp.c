@@ -1,4 +1,4 @@
-#include <dmp_util.h>
+#include <util/dmp_util.h>
 
 #include <math.h>
 

@@ -1,4 +1,5 @@
-#include <dmp_util.h>
+#ifdef __arch_x86
+#include <util/dmp_util.h>
 
 void dmp_gdt(gdt_ptr_t ptr, gdt_entry_t* entries){
 	uint64_t* entries_ptr=(uint64_t*)entries;
@@ -14,3 +15,4 @@ void dmp_gdt(gdt_ptr_t ptr, gdt_entry_t* entries){
 		entries_ptr+=sizeof i;
 	}
 }
+#endif

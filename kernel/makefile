@@ -13,7 +13,7 @@ BOOTDIR?=$(EXEC_PREFIX)/boot
 INCLUDEDIR?=$(PREFIX)/include
 
 CFLAGS:=$(CFLAGS) -ffreestanding -fbuiltin -Wall -Wextra
-CPPFLAGS:=$(CPPFLAGS) -D__is_venios_kernel -Iinclude
+CPPFLAGS:=$(CPPFLAGS) -Iinclude -D__is_venios_kernel
 LDFLAGS:=$(LDFLAGS)
 LIBS:=$(LIBS) -nostdlib -lk -lgcc
 
@@ -26,7 +26,7 @@ include $(UTILDIR)/make.config
 include $(DRIVERDIR)/make.config
 
 CFLAGS:=$(CFLAGS) $(KERNEL_ARCH_CFLAGS) $(KERNEL_UTIL_CFLAGS) $(KERNEL_DRIVER_CFLAGS)
-CPPFLAGS:=$(CPPFLAGS) $(KERNEL_ARCH_CPPFLAGS) $(KERNEL_UTIL_CPPFLAGS) $(KERNEL_DRIVER_CPPFLAGS) -D$(TARGET)
+CPPFLAGS:=$(CPPFLAGS) -D$(TARGET) $(KERNEL_ARCH_CPPFLAGS) $(KERNEL_UTIL_CPPFLAGS) $(KERNEL_DRIVER_CPPFLAGS) 
 LDFLAGS:=$(LDFLAGS) $(KERNEL_ARCH_LDFLAGS) $(KERNEL_UTIL_LDFLAGS) $(KERNEL_DRIVER_LDFLAGS)
 LIBS:=$(LIBS) $(KERNEL_ARCH_LIBS) $(KERNEL_UTIL_LIBS) $(KERNEL_DRIVER_LIBS)
 
@@ -37,6 +37,7 @@ $(KERNEL_DRIVER_OBJS)\
 kernel/kernel.o \
 kernel/io.o	\
 boot/boot.o	\
+arch/macros.o	\
 
 CRTI_OBJ:=$(ARCHDIR)/crti.o
 CRTBEGIN_OBJ:=$(shell $(CC) $(CFLAGS) $(LDFLAGS) -print-file-name=crtbegin.o)
