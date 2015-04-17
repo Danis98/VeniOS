@@ -38,14 +38,13 @@ void kernel_init(void){
 	#ifdef __arch_x86
 	init_gdt();
 	init_idt();
+	arch=NAME_X86;
+	#else
+	arch=NAME_UNSUPPORTED
 	#endif
 }
 
 void kernel_main(void){
 	//Nice header with infos
 	print_header();
-	#ifdef __x86
-	//Check supposed gdt entries
-	dmp_gdt(gdt_ptr, gdt_entries);
-	#endif
 }

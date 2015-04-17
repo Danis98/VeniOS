@@ -6,6 +6,9 @@
 #include <arch/i386/tty.h>
 #endif
 
+#define NAME_UNSUPPORTED "unsupported_arch"
+#define NAME_X86 "x86"
+
 #define NAME_LINE1 "__      __        _  ____   _____ "
 #define NAME_LINE2 "\\ \\    / /       (_)/ __ \\ / ____|"
 #define NAME_LINE3 " \\ \\  / /__ _ __  _| |  | | (___  "
@@ -15,6 +18,9 @@
                                    
 #define RELEASE "alpha"
 #define VERSION "0.1"
+
+
+const char *arch;
 
 #define AUTHORS "Venio"
 #define COPYRIGHT "Copyright (c) 2014-2015 Weird Lion Studios"
@@ -35,6 +41,7 @@ void print_header(){
 	printf("Author: "AUTHORS); terminal_fill_line();
 	terminal_fill_line();
 	printf(COPYRIGHT); terminal_fill_line();
+	printf("arch: %s", arch); terminal_fill_line();
 	terminal_setcolor((enum vga_color)(prev_color&0xf),
 			(enum vga_color)(prev_color>>4&0xf));
 }
