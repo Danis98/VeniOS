@@ -38,6 +38,9 @@ void kernel_init(void){
 	#ifdef __arch_x86
 	init_gdt();
 	init_idt();
+	arch=NAME_X86;
+	#else
+	arch=NAME_UNSUPPORTED
 	#endif
 }
 
