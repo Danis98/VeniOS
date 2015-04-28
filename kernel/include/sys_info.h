@@ -6,6 +6,15 @@
 #include <arch/i386/tty.h>
 #endif
 
+/********
+ * Machine stuff
+********/
+
+#define BDA_ADDR 0x0400
+
+/********
+ * VeniOS stuff
+********/
 #define NAME_LINE1 "__      __        _  ____   _____ "
 #define NAME_LINE2 "\\ \\    / /       (_)/ __ \\ / ____|"
 #define NAME_LINE3 " \\ \\  / /__ _ __  _| |  | | (___  "

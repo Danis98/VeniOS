@@ -44,8 +44,17 @@ void kernel_init(void){
 void kernel_main(void){
 	//Nice header with infos
 	print_header();
-	#ifdef __x86
+	#ifdef __arch_x86
 	//Check supposed gdt entries
 	dmp_gdt(gdt_ptr, gdt_entries);
 	#endif
+	//Test BDA
+	uint16_t *ptr=(uint16_t*)BDA_ADDR;
+	printf("COM1: %x\n", *ptr);
+	ptr=(uint16_t*)(BDA_ADDR+2);
+	printf("COM2: %x\n", *ptr);
+	ptr=(uint16_t*)(BDA_ADDR+4);
+	printf("COM3: %x\n", *ptr);
+	ptr=(uint16_t*)(BDA_ADDR+6);
+	printf("COM4: %x\n", *ptr);
 }

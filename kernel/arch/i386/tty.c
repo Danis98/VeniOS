@@ -4,6 +4,7 @@
 #include <string.h>
 
 #include <arch/i386/vga.h>
+#include <io.h>
 
 size_t terminal_row;
 size_t terminal_column;
@@ -47,6 +48,12 @@ void terminal_putchar(char c){
 			terminal_newline();
 		}
 	}
+	//Update cursor
+	uint8_t pos=terminal_row*80+terminal_column+1;
+	byte_out(0x3d4, 0x0f);
+	byte_out(0x3d5, (unsigned char)(pos&0xff));
+	byte_out(0x3d4, 0x0f);
+	byte_out(0x3d5, (unsigned char)(pos>>8&0xff));
 }
 
 void terminal_tab(){
