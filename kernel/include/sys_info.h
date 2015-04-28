@@ -15,7 +15,7 @@
 /********
  * VeniOS stuff
 ********/
-=======
+
 #define NAME_UNSUPPORTED "unsupported_arch"
 #define NAME_X86 "x86"
 
