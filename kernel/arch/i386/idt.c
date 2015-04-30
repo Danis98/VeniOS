@@ -26,3 +26,11 @@ void idt_set_gate(uint8_t index, uint32_t base, uint16_t selector,
 
 	idt_entries[index].zero		=0;
 }
+
+void set_idt_reg(idt_entry_t *addr, uint16_t limit){
+
+	idt_ptr_t idt_reg;
+	idt_reg.limit=limit*8;
+	idt_reg.base=(unsigned long) addr;
+	__asm__ __volatile__("lidt %0": :"g" (idt_reg));
+}

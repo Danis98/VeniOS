@@ -57,6 +57,7 @@ extern void isr31();
 
 void init_idt();
 void idt_set_gate(uint8_t, uint32_t, uint16_t, uint8_t);
+void set_idt_reg(idt_entry_t *addr, uint16_t limit);
 
 extern void idt_flush(uint32_t);
 
