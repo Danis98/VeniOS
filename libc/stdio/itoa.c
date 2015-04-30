@@ -1,23 +1,25 @@
 #include <stdio.h>
 
-char* itoa(int n, char c[]){
-	return itostr(n, c, 10);
+char* itoa(int n){
+	return itostr(n, 10);
 }
 
-char* itostr(int n, char c[], int base){
+char* itostr(int n, int base){
 	const char* digits="0123456789abcdef";
-	char* ptr=c;
+	int l;
 	int shift=n;
 	do{
-		++ptr;
+		++l;
 		shift/=base;
 	}
 	while(shift);
-	*ptr='\0';
+	char *ptr[l];
+	ptr[l-1]='\0';
+	l-=2;
 	do{
-		*--ptr=digits[n%base];
+		ptr[l--]=digits[n%base];
 		n/=base;
 	}
 	while(n);
-	return c;
+	return ptr;
 }

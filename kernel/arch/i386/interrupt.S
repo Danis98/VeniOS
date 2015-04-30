@@ -4,8 +4,10 @@
 isr_common:
 	pusha
 
-	mov ax, ds
-	push eax
+	push ds
+	push es
+	push fs
+	push gs
 
 	mov ax, 0x10
 	mov ds, ax
@@ -13,15 +15,18 @@ isr_common:
 	mov fs, ax
 	mov gs, ax
 
+	mov eax, esp
+	push eax
+
 	call isr_handler
 
 	pop eax
-	mov ds, ax
-	mov es, ax
-	mov fs, ax
-	mov gs, ax
-
+	pop gs
+	pop fs
+	pop es
+	pop ds
 	popa
+	
 	add esp, 8
 	sti
 	iret
