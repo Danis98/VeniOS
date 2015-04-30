@@ -22,3 +22,9 @@ uint16_t word_in(uint16_t port){
 	return ret;
 }
 
+void log(char *str){
+	uint32_t len=strlen(str);
+	for(uint32_t i=0;i<len;i++)
+		byte_out(COM1, str[i]);
+}
+

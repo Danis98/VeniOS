@@ -9,3 +9,4 @@ done
 rm -rfv sysroot
 rm -rfv iso
 rm -rfv venios.iso
+rm -f venios.log

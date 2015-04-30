@@ -10,4 +10,6 @@ uint16_t word_in(uint16_t);
 void byte_out(uint16_t, uint8_t);
 void word_out(uint16_t, uint16_t);
 
+void log(char *str);
+
 #endif

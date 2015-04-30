@@ -13,7 +13,7 @@ BOOTDIR?=$(EXEC_PREFIX)/boot
 INCLUDEDIR?=$(PREFIX)/include
 
 CFLAGS:=$(CFLAGS) -ffreestanding -fbuiltin -Wall -Wextra
-CPPFLAGS:=$(CPPFLAGS) -Iinclude -D__is_venios_kernel
+CPPFLAGS:=$(CPPFLAGS) -Iinclude -D__is_venios_kernel -D__DEBUG
 LDFLAGS:=$(LDFLAGS)
 LIBS:=$(LIBS) -nostdlib -lk -lgcc
 
