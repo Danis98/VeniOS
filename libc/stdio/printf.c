@@ -21,7 +21,7 @@ void printNum(int n, int base){
 		printf("-");
 		n=-n;
 	}
-	const char* str=(const char*)itostr(n, base);
+	const char* str=(const char*)itostr(n, str, base);
 	print(str, strlen(str));
 }
 

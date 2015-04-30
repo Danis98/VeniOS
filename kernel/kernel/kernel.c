@@ -51,5 +51,6 @@ void kernel_main(void){
 	#ifdef __arch_x86
 	//Check supposed gdt entries
 	dmp_gdt(gdt_ptr, gdt_entries);
+	dmp_idt(idt_ptr, idt_entries);
 	#endif
 }

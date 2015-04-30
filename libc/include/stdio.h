@@ -12,9 +12,9 @@ int printf(const char* __restrict, ...);
 int putchar(int);
 int puts(const char*);
 
-char* itoa(int n);
+char* itoa(int n, char c[]);
 
-char* itostr(int n, int base);
+char* itostr(int n, char c[], int base);
 
 #ifdef __cplusplus
 }

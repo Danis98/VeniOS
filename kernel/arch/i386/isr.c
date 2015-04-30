@@ -42,7 +42,7 @@ void isr_handler(registers_t regs){
 	#ifdef __DEBUG
 	log("-------INTERRUPT-------\n");
 	log("Interrupt num: ");
-	log(itoa(regs.int_n));
+	//log(itoa(regs.int_n));
 	log("\nErr message:\n");
 	log(err_messages[regs.int_n]);
 	log("\n---END OF INTERRUPT---\n");
