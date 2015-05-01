@@ -8,11 +8,10 @@ void dmp_idt(idt_ptr_t ptr, idt_entry_t* entries){
 		(uint64_t)(sizeof i*8), entries_ptr);
 	printf("idt_ptr: base -> %x\n\tlimit -> %x\n", ptr.base, ptr.limit);
 	for(i=0;i<5;i++){
-		printf("Addr: %x \t", entries_ptr);
-		mem_dmp(entries_ptr, entries_ptr+8, 32);
+		entries_ptr=&entries[i];
+		mem_dmp(entries_ptr, 8, 0);
 		printf("Expected entry: ");
-		print_idt_entry(entries[i]);
-		entries_ptr+=sizeof i;
+		print_idt_entry(&entries[i]);
 	}
 }
 #endif

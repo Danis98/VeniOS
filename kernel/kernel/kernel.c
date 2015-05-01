@@ -28,6 +28,8 @@
 #error "Not using a cross compiler! There will be trouble!"
 #endif
 
+char *arch;
+
 void kernel_init(void){
 	terminal_initialize(COLOR_LIGHT_GREY,COLOR_BLACK);
 	if(!check_arch_macros()){
@@ -48,9 +50,11 @@ void kernel_init(void){
 void kernel_main(void){
 	//Nice header with infos
 	print_header();
+	uint8_t *arr={0x01, 0x02, 0x03, 0x04};
+	mem_dmp(&arr, 4, 0);
 	#ifdef __arch_x86
 	//Check supposed gdt entries
-	dmp_gdt(gdt_ptr, gdt_entries);
-	dmp_idt(idt_ptr, idt_entries);
+	//dmp_gdt(gdt_ptr, gdt_entries);
+	//dmp_idt(idt_ptr, idt_entries);
 	#endif
 }

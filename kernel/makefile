@@ -38,6 +38,7 @@ kernel/kernel.o \
 kernel/io.o	\
 boot/boot.o	\
 arch/macros.o	\
+arch/print_header.o\
 
 CRTI_OBJ:=$(ARCHDIR)/crti.o
 CRTBEGIN_OBJ:=$(shell $(CC) $(CFLAGS) $(LDFLAGS) -print-file-name=crtbegin.o)
